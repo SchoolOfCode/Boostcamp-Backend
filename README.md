@@ -15,7 +15,7 @@ https://socboostcampapi.herokuapp.com/
 
 1. `Npm run dev` to start the server.
 2. Go to `localhost:3000/tasks/`.
-3. Fill out the form to add a task to a specific MongoDB Collection on the database.
+3. Fill out the html form to add a task to a specific MongoDB Collection on the database.
 4. You can check that that the task has been added to the database by going to that collections corresponding URL route below.
 
 ## Routes:
