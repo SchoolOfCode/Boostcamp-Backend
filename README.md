@@ -1,6 +1,16 @@
 # Team Caarve Backend
 
-An API containing routes to make requests from the front end to three separate tables for short, medium & long term tasks.
+## Routes:
+
+/tasks/short
+/tasks/medium
+/tasks/long
+/tasks/onscreen/short
+/tasks/onscreen/medium
+/tasks/onscreen/long
+/tasks/offscreen/short
+/tasks/offscreen/medium
+/tasks/offscreen/long
 
 <!-- # The Back End Project Example
 
