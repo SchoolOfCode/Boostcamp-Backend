@@ -10,6 +10,17 @@ import tasksRouter from './routes/tasks.js';
 
 const app = express();
 
+import mongoose from 'mongoose';
+
+//Connect to Mongo DB
+const dbURI =
+  'mongodb+srv://Richardjdmckenzie:teamcaarve@randomtasks.t8sne.mongodb.net/randomTasks?retryWrites=true&w=majority';
+
+mongoose.connect(dbURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
 app.use(logger('dev'));
 app.use(cors());
 app.use(express.json());
