@@ -13,8 +13,7 @@ const app = express();
 import mongoose from 'mongoose';
 
 //Connect to Mongo DB
-const dbURI =
-  'mongodb+srv://Richardjdmckenzie:teamcaarve@randomtasks.t8sne.mongodb.net/randomTasks?retryWrites=true&w=majority';
+const dbURI = process.env.DATABASE_URI;
 
 mongoose.connect(dbURI, {
   useNewUrlParser: true,
