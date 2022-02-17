@@ -28,5 +28,3 @@ async function populateShortTable() {
 }
 
 populateShortTable();
-
-db.end();

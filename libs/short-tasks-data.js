@@ -1,15 +1,25 @@
 const shortTasks = [
    {
-      taskName: "Polish Glasses or Plates",
+      taskName: "Get arty!",
       taskDuration: "5-10 Minutes",
       taskInstructions:
-         "Go to the kitchen find some polish and make those glasses and plate shiny",
-      taskBenefits: "A clean kitchen means a clean mind",
-      taskImage:
-         "https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F3%2F32%2FMap_of_Polish_language.svg&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPolish_language&tbnid=i-Jtag_7DePlkM&vet=12ahUKEwjZtPX42Yb2AhWCRUEAHWjGBrwQMygAegUIARDZAQ..i&docid=oIOLM2MbvrX3HM&w=2865&h=3118&q=polish&ved=2ahUKEwjZtPX42Yb2AhWCRUEAHWjGBrwQMygAegUIARDZAQ",
-      taskVideo:
-         "https://www.youtube.com/watch?v=r37ylwYIkRU&ab_channel=LearnPolishwithPolishPod101.com",
+         "Close your eyes and turn around. Draw a picture of the first thing you see and send it to a friend! Use a pen and paper, MS Paint, whatever you like!",
+      taskBenefits:
+         "Being spontaneous and creative is great fuel for the brain and good way to re-energise!",
+      taskImage: "",
+      taskVideo: "",
       taskType: "offscreen",
+   },
+   {
+      taskName: "Go global!",
+      taskDuration: "5-10 Minutes",
+      taskInstructions:
+         "Head to Google Maps. Click a random location. Head to street view and explore the area for 5 minutes! Share what you find with a friend.",
+      taskBenefits:
+         "Giving yourself a sense of adventure can be a great dose of virtual serotonin!",
+      taskImage: "",
+      taskVideo: "",
+      taskType: "onscreen",
    },
 ];
 

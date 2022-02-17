@@ -28,5 +28,3 @@ async function populateMediumTable() {
 }
 
 populateMediumTable();
-
-db.end();
