@@ -7,7 +7,7 @@ import {
 
 const router = express.Router();
 
-router.get('/', async function (req, res, next) {
+router.get('/short', async function (req, res, next) {
   const shortTasks = await getShortTasks();
 
   res.json({
@@ -16,7 +16,7 @@ router.get('/', async function (req, res, next) {
   });
 });
 
-router.get('/', async function (req, res, next) {
+router.get('/medium', async function (req, res, next) {
   const mediumTasks = await getMediumTasks();
 
   res.json({
@@ -25,7 +25,7 @@ router.get('/', async function (req, res, next) {
   });
 });
 
-router.get('/', async function (req, res, next) {
+router.get('/long', async function (req, res, next) {
   const longTasks = await getLongTasks();
 
   res.json({
