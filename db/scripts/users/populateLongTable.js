@@ -1,13 +1,13 @@
 import db from '../../connection.js';
 
-import longTasks from '../../../libs/long-tasks-data';
+import longTasks from '../../../libs/long-tasks-data.js';
 
 async function populateLongTable() {
   for (let i = 0; i < longTasks.length; i++) {
     const taskName = longTasks[i].taskName;
     const taskDuration = longTasks[i].taskDuration;
     const taskInstructions = longTasks[i].taskInstructions;
-    const taskBenefits = longTasks[i].task_benefits;
+    const taskBenefits = longTasks[i].taskBenefits;
     const taskImage = longTasks[i].taskImage;
     const taskVideo = longTasks[i].taskVideo;
 
@@ -26,7 +26,5 @@ async function populateLongTable() {
 }
 
 populateLongTable();
-
-console.log(response);
 
 db.end();

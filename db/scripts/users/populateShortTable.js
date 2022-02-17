@@ -1,13 +1,13 @@
 import db from '../../connection.js';
 
-import shortTasks from '../../../libs/short-tasks-data';
+import shortTasks from '../../../libs/short-tasks-data.js';
 
 async function populateShortTable() {
   for (let i = 0; i < shortTasks.length; i++) {
     const taskName = shortTasks[i].taskName;
     const taskDuration = shortTasks[i].taskDuration;
     const taskInstructions = shortTasks[i].taskInstructions;
-    const taskBenefits = shortTasks[i].task_benefits;
+    const taskBenefits = shortTasks[i].taskBenefits;
     const taskImage = shortTasks[i].taskImage;
     const taskVideo = shortTasks[i].taskVideo;
 
@@ -26,7 +26,5 @@ async function populateShortTable() {
 }
 
 populateShortTable();
-
-console.log(response);
 
 db.end();

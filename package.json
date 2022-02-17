@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node ./bin/www.js",
     "db:deploy": "node ./db/scripts/users/createTable.js && node ./db/scripts/users/populateTable.js",
-    "db:createtasks": "node -r dotenv/config ./db/scripts/users/createTable.js",
-    "db:populatetasks": "node -r dotenv/config ./db/scripts/users/populateShortTable.js && node -r dotenv/config ./db/scripts/users/populateMediumTable.js && node -r dotenv/config ./db/scripts/users/populateLongTable.js",
+    "db:createtables": "node -r dotenv/config ./db/scripts/users/createTable.js",
+    "db:populatetables": "node -r dotenv/config ./db/scripts/users/populateShortTable.js && node -r dotenv/config ./db/scripts/users/populateMediumTable.js && node -r dotenv/config ./db/scripts/users/populateLongTable.js",
     "dev": "nodemon -r dotenv/config ./bin/www.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },

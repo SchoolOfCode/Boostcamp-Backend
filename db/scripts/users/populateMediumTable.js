@@ -1,13 +1,13 @@
 import db from '../../connection.js';
 
-import mediumTasks from '../../../libs/medium-tasks-data';
+import mediumTasks from '../../../libs/medium-tasks-data.js';
 
 async function populateMediumTable() {
   for (let i = 0; i < mediumTasks.length; i++) {
     const taskName = mediumTasks[i].taskName;
     const taskDuration = mediumTasks[i].taskDuration;
     const taskInstructions = mediumTasks[i].taskInstructions;
-    const taskBenefits = mediumTasks[i].task_benefits;
+    const taskBenefits = mediumTasks[i].taskBenefits;
     const taskImage = mediumTasks[i].taskImage;
     const taskVideo = mediumTasks[i].taskVideo;
 
@@ -26,7 +26,5 @@ async function populateMediumTable() {
 }
 
 populateMediumTable();
-
-console.log(response);
 
 db.end();
