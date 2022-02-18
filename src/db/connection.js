@@ -1,6 +1,6 @@
 import pg from 'pg';
 
-import { connectionString } from '../config.js';
+const connectionString = process.env.DATABASE_URL;
 
 const pool = new pg.Pool({
   connectionString,
