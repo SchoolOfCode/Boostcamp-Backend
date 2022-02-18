@@ -1,8 +1,8 @@
-# Team Caarve Backend
+# Boostcamp API
 
 ## App URL:
 
-https://randomtaskapp.herokuapp.com/
+https://socboostcamp.herokuapp.com/
 
 ## Routes:
 
