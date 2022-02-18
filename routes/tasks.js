@@ -9,7 +9,7 @@ import {
   getOffscreenShortTasks,
   getOffscreenMediumTasks,
   getOffscreenLongTasks,
-  OnscreenShortTask,
+  // OnscreenShortTask,
 } from '../models/tasks.js';
 
 const router = express.Router();
@@ -101,33 +101,33 @@ router.get('/offscreen/long', async function (req, res, next) {
 // mongoose and mongo sandbox routes
 
 //Adds a onscreen short task to the db
-router.get('/addOnscreenShortTask', async (req, res) => {
-  const onscreenShortTask = new OnscreenShortTask({
-    taskName: 'Go global!',
-    taskDuration: '5-10 Minutes',
-    taskInstructions:
-      'Head to Google Maps. Click a random location. Head to street view and explore the area for 5 minutes! Share what you find with a friend.',
-    taskBenefits:
-      'Giving yourself a sense of adventure can be a great dose of virtual serotonin!',
-    taskImage: '',
-    taskVideo: '',
-    taskType: 'onscreen',
-  });
-  await onscreenShortTask.save();
-  console.log(onscreenShortTask);
-  res.json({
-    success: true,
-    payload: onscreenShortTask,
-  });
-});
+// router.get('/addOnscreenShortTask', async (req, res) => {
+//   const onscreenShortTask = new OnscreenShortTask({
+//     taskName: 'Go global!',
+//     taskDuration: '5-10 Minutes',
+//     taskInstructions:
+//       'Head to Google Maps. Click a random location. Head to street view and explore the area for 5 minutes! Share what you find with a friend.',
+//     taskBenefits:
+//       'Giving yourself a sense of adventure can be a great dose of virtual serotonin!',
+//     taskImage: '',
+//     taskVideo: '',
+//     taskType: 'onscreen',
+//   });
+//   await onscreenShortTask.save();
+//   console.log(onscreenShortTask);
+//   res.json({
+//     success: true,
+//     payload: onscreenShortTask,
+//   });
+// });
 
-//Gets all tasks from the db
-router.get('/onscreen-short-tasks', async (req, res) => {
-  const allOnscreenShortTasks = await OnscreenShortTask.find();
-  res.json({
-    success: true,
-    payload: allOnscreenShortTasks,
-  });
-});
+//Gets all the onscreen short tasks from the mongo db
+// router.get('/onscreen-short-tasks', async (req, res) => {
+//   const allOnscreenShortTasks = await OnscreenShortTask.find();
+//   res.json({
+//     success: true,
+//     payload: allOnscreenShortTasks,
+//   });
+// });
 
 export default router;
