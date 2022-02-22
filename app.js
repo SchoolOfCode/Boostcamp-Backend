@@ -10,15 +10,15 @@ import tasksRouter from './routes/tasks.js';
 
 const app = express();
 
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
-//Connect to Mongo DB
-// const dbURI = process.env.DATABASE_URI;
+// Connect to Mongo DB
+const dbURI = process.env.DATABASE_URI;
 
-// mongoose.connect(dbURI, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
+mongoose.connect(dbURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 app.use(logger('dev'));
 app.use(cors());

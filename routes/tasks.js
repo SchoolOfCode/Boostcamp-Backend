@@ -1,133 +1,147 @@
 import express from 'express';
 import {
-  getShortTasks,
-  getMediumTasks,
-  getLongTasks,
-  getOnscreenShortTasks,
-  getOnscreenMediumTasks,
-  getOnscreenLongTasks,
-  getOffscreenShortTasks,
-  getOffscreenMediumTasks,
-  getOffscreenLongTasks,
-  // OnscreenShortTask,
-} from '../models/tasks.js';
+  OnScreenShort,
+  OnScreenMedium,
+  OnScreenLong,
+  OffScreenShort,
+  OffScreenMedium,
+  OffScreenLong,
+} from '../models/schemas.js';
 
 const router = express.Router();
 
-// routes for fetching all tasks
-router.get('/short', async function (req, res, next) {
-  const shortTasks = await getShortTasks();
+// Mongoose and Mongo Sandbox Routes
 
+// Adds a Onscreen Short Task to the Mongo DB
+router.get('/add/onscreen/short', async (req, res) => {
+  const onScreenShort = new OnScreenShort({
+    taskInstructions: 'Insert Task Instructions text here',
+    taskBenefits: 'Insert Task Benefits text here',
+  });
+  await onScreenShort.save();
   res.json({
     success: true,
-    payload: shortTasks,
+    payload: onScreenShort,
   });
 });
 
-router.get('/medium', async function (req, res, next) {
-  const mediumTasks = await getMediumTasks();
-
+// Gets all the Onscreen Short Tasks from the Mongo DB
+router.get('/onscreen/short', async (req, res) => {
+  const allOnScreenShort = await OnScreenShort.find();
   res.json({
     success: true,
-    payload: mediumTasks,
+    payload: allOnScreenShort,
   });
 });
 
-router.get('/long', async function (req, res, next) {
-  const longTasks = await getLongTasks();
-
+// Adds a Onscreen Medium Task to the Mongo DB
+router.get('/add/onscreen/medium', async (req, res) => {
+  const onScreenMedium = new OnScreenMedium({
+    taskInstructions: 'Insert Task Instructions text here',
+    taskBenefits: 'Insert Task Benefits text here',
+  });
+  await onScreenMedium.save();
   res.json({
     success: true,
-    payload: longTasks,
+    payload: onScreenMedium,
   });
 });
 
-// routes for fetching onscreen tasks
-router.get('/onscreen/short', async function (req, res, next) {
-  const onscreenShortTasks = await getOnscreenShortTasks();
-
+// Gets all the Onscreen Medium Tasks from the Mongo DB
+router.get('/onscreen/medium', async (req, res) => {
+  const allOnScreenMedium = await OnScreenMedium.find();
   res.json({
     success: true,
-    payload: onscreenShortTasks,
+    payload: allOnScreenMedium,
   });
 });
 
-router.get('/onscreen/medium', async function (req, res, next) {
-  const onscreenMediumTasks = await getOnscreenMediumTasks();
-
+// Adds a Onscreen Long Task to the Mongo DB
+router.get('/add/onscreen/long', async (req, res) => {
+  const onScreenLong = new OnScreenLong({
+    taskInstructions: 'Insert Task Instructions text here',
+    taskBenefits: 'Insert Task Benefits text here',
+  });
+  await onScreenLong.save();
   res.json({
     success: true,
-    payload: onscreenMediumTasks,
+    payload: onScreenLong,
   });
 });
 
-router.get('/onscreen/long', async function (req, res, next) {
-  const onscreenLongTasks = await getOnscreenLongTasks();
-
+// Gets all the Onscreen Long Tasks from the Mongo DB
+router.get('/onscreen/long', async (req, res) => {
+  const allOnScreenLong = await OnScreenLong.find();
   res.json({
     success: true,
-    payload: onscreenLongTasks,
+    payload: allOnScreenLong,
   });
 });
 
-// routes for fetching offscreen tasks
-router.get('/offscreen/short', async function (req, res, next) {
-  const offscreenShortTasks = await getOffscreenShortTasks();
-
+// Adds a Offscreen Short Task to the Mongo DB
+router.get('/add/offscreen/short', async (req, res) => {
+  const offScreenShort = new OffScreenShort({
+    taskInstructions: 'Insert Task Instructions text here',
+    taskBenefits: 'Insert Task Benefits text here',
+  });
+  await offScreenShort.save();
   res.json({
     success: true,
-    payload: offscreenShortTasks,
+    payload: offScreenShort,
   });
 });
 
-router.get('/offscreen/medium', async function (req, res, next) {
-  const offscreenMediumTasks = await getOffscreenMediumTasks();
-
+// Gets all the Onscreen Short Tasks from the Mongo DB
+router.get('/offscreen/short', async (req, res) => {
+  const allOffScreenShort = await OffScreenShort.find();
   res.json({
     success: true,
-    payload: offscreenMediumTasks,
+    payload: allOffScreenShort,
   });
 });
 
-router.get('/offscreen/long', async function (req, res, next) {
-  const offscreenLongTasks = await getOffscreenLongTasks();
-
+// Adds a Onscreen Medium Task to the Mongo DB
+router.get('/add/offscreen/medium', async (req, res) => {
+  const offScreenMedium = new OffScreenMedium({
+    taskInstructions: 'Insert Task Instructions text here',
+    taskBenefits: 'Insert Task Benefits text here',
+  });
+  await offScreenMedium.save();
   res.json({
     success: true,
-    payload: offscreenLongTasks,
+    payload: offScreenMedium,
   });
 });
 
-// mongoose and mongo sandbox routes
+// Gets all the Onscreen Medium Tasks from the Mongo DB
+router.get('/offscreen/medium', async (req, res) => {
+  const allOffScreenMedium = await OffScreenMedium.find();
+  res.json({
+    success: true,
+    payload: allOffScreenMedium,
+  });
+});
 
-//Adds a onscreen short task to the db
-// router.get('/addOnscreenShortTask', async (req, res) => {
-//   const onscreenShortTask = new OnscreenShortTask({
-//     taskName: 'Go global!',
-//     taskDuration: '5-10 Minutes',
-//     taskInstructions:
-//       'Head to Google Maps. Click a random location. Head to street view and explore the area for 5 minutes! Share what you find with a friend.',
-//     taskBenefits:
-//       'Giving yourself a sense of adventure can be a great dose of virtual serotonin!',
-//     taskImage: '',
-//     taskVideo: '',
-//     taskType: 'onscreen',
-//   });
-//   await onscreenShortTask.save();
-//   console.log(onscreenShortTask);
-//   res.json({
-//     success: true,
-//     payload: onscreenShortTask,
-//   });
-// });
+// Adds a Onscreen Long Task to the Mongo DB
+router.get('/add/offscreen/long', async (req, res) => {
+  const offScreenLong = new OffScreenLong({
+    taskInstructions: 'Insert Task Instructions text here',
+    taskBenefits: 'Insert Task Benefits text here',
+  });
+  await offScreenLong.save();
+  res.json({
+    success: true,
+    payload: offScreenLong,
+  });
+});
 
-//Gets all the onscreen short tasks from the mongo db
-// router.get('/onscreen-short-tasks', async (req, res) => {
-//   const allOnscreenShortTasks = await OnscreenShortTask.find();
-//   res.json({
-//     success: true,
-//     payload: allOnscreenShortTasks,
-//   });
-// });
+// Gets all the Onscreen Long Tasks from the Mongo DB
+router.get('/offscreen/long', async (req, res) => {
+  const allOffScreenLong = await OffScreenLong.find();
+  res.json({
+    success: true,
+    payload: allOffScreenLong,
+  });
+});
 
 export default router;
