@@ -7,6 +7,7 @@ https://socboostcampapi.herokuapp.com/
 ## Running Locally:
 
 - Clone the repository.
+- npm i.
 - add a .env file to your repository.
 - The DATABASE URI for the .env can be found in the team slack.
 
