@@ -6,8 +6,8 @@ const router = express.Router();
 const Schema = mongoose.Schema;
 
 export const taskSchema = new Schema({
-  taskInstructions: { type: String, required: true },
-  taskBenefits: { type: String, required: true },
+  taskInstructions: { type: String, required: false },
+  taskBenefits: { type: String, required: false },
 });
 
 // Gets all the Onscreen Short Tasks from the Mongo DB
