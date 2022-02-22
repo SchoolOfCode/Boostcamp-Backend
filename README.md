@@ -13,14 +13,14 @@ https://socboostcampapi.herokuapp.com/
 
 ## Adding a task:
 
-1. Go into `routes/tasks.js` and change the `taskInstructions` and `taskBenefits` for the specific task type and duration that you desire, and make sure you save the changes.
-2. `Npm run dev` to start the server.
-3. Open a browser and go to the specific `add` URL of the task you have changed - e.g for an onscreen short task you will go to the url `localhost:3000/tasks/add/onscreen/short`.
-4. The above URL will add the task to the database - you can then check its been added by going to the corresponding handler `localhost:3000/tasks/onscreen/short`.
+1. `Npm run dev` to start the server.
+2. Go to `localhost:3000/tasks/`.
+3. Fill out the form to add a task to a specific MongoDB Collection on the database - both the `Task Instructions` and `Task Benefits` fields MUST be filled or it will crash the server.
+4. You can check that that the task has been added to the database by going to that collections corresponding URL route below.
 
 ## Routes:
 
-The routes below are to fetch all tasks from their respective collections.
+The routes below are to fetch all the tasks from their respective collection.
 
 - /tasks/onscreen/short
 - /tasks/onscreen/medium
@@ -28,12 +28,3 @@ The routes below are to fetch all tasks from their respective collections.
 - /tasks/offscreen/short
 - /tasks/offscreen/medium
 - /tasks/offscreen/long
-
-The Routes below are required when adding tasks to the database.
-
-- /tasks/add/onscreen/short
-- /tasks/add/onscreen/medium
-- /tasks/add/onscreen/long
-- /tasks/add/offscreen/short
-- /tasks/add/offscreen/medium
-- /tasks/add/offscreen/long

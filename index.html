@@ -1,0 +1,31 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a Task</title>
+  </head>
+  <body>
+    <h1>Add a Task</h1>
+    <form method="post" action="/tasks">
+      <label for="taskType">Task Type:</label>
+      <select name="taskType">
+        <option value="OnScreen">OnScreen</option>
+        <option value="OffScreen">OffScreen</option>
+      </select>
+      <br />
+      <label for="taskDuration">Task Duration: </label>
+      <select name="taskDuration">
+        <option value="Short">Short</option>
+        <option value="Medium">Medium</option>
+        <option value="Long">Long</option>
+      </select>
+      <br />
+      <label for="instructions">Task Instructions</label>
+      <input type="text" name="taskInstructions" /><br />
+      <label for="benefits">Task Benefits</label>
+      <input type="text" name="taskBenefits" /><br />
+      <button>Add Task to Mongo DB</button>
+    </form>
+  </body>
+</html>

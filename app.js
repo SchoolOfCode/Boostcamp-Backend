@@ -20,6 +20,10 @@ mongoose.connect(dbURI, {
   useUnifiedTopology: true,
 });
 
+app.get('/tasks', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
+
 app.use(logger('dev'));
 app.use(cors());
 app.use(express.json());
