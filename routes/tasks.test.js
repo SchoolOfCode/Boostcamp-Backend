@@ -15,14 +15,8 @@ test('GET /tasks/onscreen/short', () => {
       };
       //    4. Checks if every item in the `payload` array is an object with the structure of routes/tasks.js
       res.body.payload = {
-        taskName: expect.any(String),
-        taskDuration: expect.any(String),
         taskInstructions: expect.any(String),
-        taskName: expect.any(String),
         taskBenefits: expect.any(String),
-        taskImage: expect.any(String),
-        taskVideo: expect.any(String),
-        taskType: expect.any(String),
       };
     });
 });
