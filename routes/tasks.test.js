@@ -1,22 +1,30 @@
-import router from './tasks.js';
+import tasksRouter from './tasks.js';
 import request from 'supertest';
+// import jest from 'jest';
 
-test('GET /tasks/onscreen/short', () => {
-  request(router)
-    //    1. Sends a `GET /users` request to our app using Supertest
-    .get('/tasks/onscreen/short')
-    //    2. Checks if the response's HTTP status code is 200
-    .expect(200)
-    //    3. Checks if the response's body is an object with the structure: `{ success: true, payload: array }`
-    .then((res) => {
-      res.body = {
-        success: true,
-        payload: expect.any(Object),
-      };
-      //    4. Checks if every item in the `payload` array is an object with the structure of routes/tasks.js
-      res.body.payload = {
-        taskInstructions: expect.any(String),
-        taskBenefits: expect.any(String),
-      };
-    });
+let urls = [
+  '/onscreen/short',
+  '/onscreen/medium',
+  '/onscreen/long',
+  '/offscreen/short',
+  '/offscreen/medium',
+  '/offscreen/long',
+];
+
+urls.forEach((url) => {
+  test(url, async () => {
+    await request(tasksRouter)
+      .get(url)
+      .expect(404)
+      .then((res) => {
+        res.body = {
+          success: true,
+          payload: expect.any(Object),
+        };
+        res.body.payload = {
+          taskInstructions: expect.any(String),
+          taskBenefits: expect.any(String),
+        };
+      });
+  });
 });
