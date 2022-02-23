@@ -4,28 +4,140 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add a Task</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        color: #1c1e21;
+        font-family: 'avenir';
+        font-size: 1.75vh;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: #edf0f5;
+      }
+
+      main {
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2%;
+      }
+
+      form {
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        padding: 2vh;
+      }
+
+      #logo-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 1vh;
+      }
+
+      .star {
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 0.4vh;
+        border-color: #1c1e21;
+        margin-right: 1vh;
+      }
+
+      h1 {
+        color: #1c1e21;
+        font-weight: 700;
+        font-size: 4vh;
+      }
+
+      p {
+        color: #1c1e21;
+        font-weight: 400;
+        font-size: 2.5vh;
+        padding-bottom: 1vh;
+      }
+
+      button {
+        background: #42b72a;
+        color: #fff;
+        font-weight: 600;
+        padding: 1.5vh;
+        font-size: 2vh;
+        margin-top: 1vh;
+        border: none;
+        border-radius: 1vh;
+      }
+
+      select {
+        padding: 0.75vh;
+        margin-top: 0.5vh;
+        margin-bottom: 0.5vh;
+        font-size: 1.75vh;
+        border-color: #edf0f5;
+        border-radius: 5px;
+      }
+
+      textarea {
+        padding: 1.5vh;
+        margin: 0.5vh;
+        font-size: 1.75vh;
+        border-color: #edf0f5;
+        border-style: solid;
+        border-width: 0.01px;
+        border-radius: 5px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Add a Task</h1>
+    <div id="logo-container">
+      <i style="font-size: 3vh" class="far star">&#xf005;</i>
+      <h1>BOOSTCAMP</h1>
+    </div>
+    <p id="description">Add a Task to the Mongo DB</p>
     <form method="post" action="/tasks">
       <label for="taskType">Task Type:</label>
       <select name="taskType">
         <option value="OnScreen">OnScreen</option>
         <option value="OffScreen">OffScreen</option>
       </select>
-      <br />
       <label for="taskDuration">Task Duration: </label>
       <select name="taskDuration">
         <option value="Short">Short</option>
         <option value="Medium">Medium</option>
         <option value="Long">Long</option>
       </select>
-      <br />
-      <label for="instructions">Task Instructions</label><br />
-      <textarea rows="5" cols="25" name="taskInstructions"></textarea><br />
-      <label for="benefits">Task Benefits</label><br />
-      <textarea rows="5" cols="25" name="taskBenefits"></textarea><br />
-      <button>Add Task to Mongo DB</button>
+      <textarea
+        rows="5"
+        cols="25"
+        name="taskInstructions"
+        placeholder="Task Instructions"
+        required
+      ></textarea>
+      <textarea
+        rows="5"
+        cols="25"
+        name="taskBenefits"
+        placeholder="Task Benefits"
+        required
+      ></textarea>
+      <button>Add Task</button>
     </form>
   </body>
 </html>
