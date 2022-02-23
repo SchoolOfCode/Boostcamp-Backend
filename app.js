@@ -34,9 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/tasks', tasksRouter);
 
 app.use(function (req, res, next) {
-  res
-    .status(404)
-    .json({ message: "We couldn't find what you were looking for 😞" });
+  res.status(404).json({ message: 'No URL path found' });
 });
 
 app.use(function (err, req, res, next) {
